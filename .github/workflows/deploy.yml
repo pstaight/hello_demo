@@ -37,9 +37,8 @@ jobs:
         run: |
           ssh -i ~/.ssh/deploy_key "$DEPLOY_USER@$DEPLOY_HOST" '
             set -e
-            cd /opt/hello_server-src
-            make
-            sudo make install
+            make -C /opt/hello_server-src
+            sudo make -C /opt/hello_server-src install
             sudo systemctl daemon-reload
             sudo systemctl restart hello_server
           '
