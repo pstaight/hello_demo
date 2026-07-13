@@ -3,9 +3,7 @@ name: Deploy hello_server
 on:
   push:
     branches: [main]
-    paths:
-      - 'hello_server/**'
-      - '.github/workflows/deploy.yml'
+  workflow_dispatch: {}
 
 jobs:
   deploy:
