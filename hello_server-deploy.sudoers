@@ -1,0 +1,5 @@
+Cmnd_Alias HELLO_SERVER_DEPLOY = /usr/bin/make -C /opt/hello_server-src install, \
+                                 /usr/bin/systemctl daemon-reload, \
+                                 /usr/bin/systemctl restart hello_server
+
+deploy ALL=(root) NOPASSWD: HELLO_SERVER_DEPLOY
